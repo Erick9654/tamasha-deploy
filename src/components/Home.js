@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import { useUser } from './UserContext';
 import EventList from './EventList';
 import './home.css';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate()
@@ -130,7 +131,7 @@ function Home() {
           </p>
           <button onClick= {userSignUp} className="get-started-button">
             Get Started for Free
-          </a>
+          </button>
         </div>
       </div>
       <div className="events-section">
