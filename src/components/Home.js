@@ -5,6 +5,7 @@ import EventList from './EventList';
 import './home.css';
 
 function Home() {
+  const navigate = useNavigate()
   const { user, onLogout, token } = useUser();
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
@@ -16,6 +17,7 @@ function Home() {
   const [error, setError] = useState(null);
 
   const userIsLoggedIn = !!user;
+  const userSignUp = () => navigate ("/sign-up")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -126,7 +128,7 @@ function Home() {
             platform ensures that booking tickets is quick, easy, and
             hassle-free.
           </p>
-          <a href="/sign-up" className="get-started-button">
+          <button onClick= {userSignUp} className="get-started-button">
             Get Started for Free
           </a>
         </div>
